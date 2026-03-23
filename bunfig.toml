@@ -1,0 +1,17 @@
+
+[install]
+
+# Version pinning
+# Bun defaults to caret ranges (^2.4.1). Setting exact = true pins the exact
+# version (2.4.1), removing implicit SemVer drift — reproducible installs
+# without relying solely on the lockfile.
+exact = true
+
+# Isolated installs (pnpm-style node_modules)
+# Bun defaults to "hoisted" (flat npm/Yarn layout) where all transitive deps
+# land in top-level node_modules/. This lets code import packages it never
+# declared — phantom dependencies. The "isolated" linker uses symlinks (like
+# pnpm) so each package only sees its declared dependencies. Prevents phantom
+# deps and produces more deterministic installs.
+# Ref: https://bun.sh/docs/pm/isolated-installs
+linker = "isolated"
