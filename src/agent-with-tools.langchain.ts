@@ -97,6 +97,6 @@ const agentResponse = await agent.invoke(
   },
 );
 
-console.log({
-  agentResponse,
+console.dir(agentResponse.structuredResponse, {
+  depth: null,
 });
